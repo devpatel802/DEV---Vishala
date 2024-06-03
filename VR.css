@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white; /* Set the default font color to white */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    /*background-color: rgba(0, 0, 0, 0.7); /* Make the background slightly transparent and darker for better contrast */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    position: relative;
+}
+
+.logo {
+    max-width: 100px; /* Adjust the size of the logo as needed */
+    display: block;
+    position: absolute; /* Absolute positioning for the logo */
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px; /* Add margin to account for logo */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%; /* Make input elements take full width */
+    color: black; /* Set text color inside input and textarea to black */
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.emoji-rating {
+    display: flex;
+    justify-content: center; /* Center align emoji labels */
+}
+
+.emoji-rating label {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 10px; /* Add space between emojis */
+}
+
+.emoji-rating input[type="radio"]:checked + label {
+    outline: 2px solid #fff; /* Change outline color to white */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: auto; /* Allow button to adjust to content size */
+}
+
+button:hover {
+    background-color: #45a049;
+}

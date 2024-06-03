@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .active {
+            opacity: 1 !important;
+        }
+
+        .form-box {
+    width: 60%;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Reduced opacity */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .textup {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+
+        .radio-group label {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .radio-group input[type="radio"]:checked + label {
+            transform: scale(1.2) rotate(10deg);
+            color: #ff9800;
+        }
+
+        .radio-group label:hover {
+            transform: scale(1.1);
+            color: #ff9800;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        @media (max-width: 768px) {
+            .form-box {
+                width: 80%;
+                padding: 15px;
+            }
+
+            .textup {
+                font-size: 16px;
+            }
+
+            label {
+                margin-bottom: 8px;
+            }
+
+            input[type="text"], input[type="email"], input[type="tel"], textarea {
+                padding: 8px;
+            }
+
+            button[type="submit"] {
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-box {
+                width: 70%;
+                margin-right:26px;
+                padding: 10px;
+            }
+
+            .textup {
+                font-size: 14px;
+            }
+
+            label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            input[type="text"], input[type="email"], input[type="tel"], textarea {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            button[type="submit"] {
+                padding: 6px 12px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img src="IMG1.png" alt="Background 1" class="active">
+        <img src="IMG2.png" alt="Background 2">
+        <img src="IMG3.png" alt="Background 3">
+    </div>
+    <div class="form-box">
+        <div class="container">
+            <h1>Vishala</h1>
+            <h3>Your feedback is valuable to us, so please use the suggestion box to let us know where you think we can do better.</h3>
+        </div>
+        <br>
+        <div class="textup">
+            <i class="fa fa-solid fa-clock"></i>
+            It only takes two minutes!!
+        </div>
+        <form>
+            <label for="uname">
+                <i class="fa fa-solid fa-user"></i>
+                Name
+            </label>
+            <input type="text" id="uname" name="uname" required>
+
+            <label for="email">
+                <i class="fa fa-solid fa-envelope"></i>
+                Email Address
+            </label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">
+                <i class="fa-solid fa-phone"></i>
+                Phone No
+            </label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label>
+                <i class="fa-solid fa-face-smile"></i>
+                How would you rate our service?
+            </label>
+            <div class="radio-group">
+                <input type="radio" id="sad" name="rating" value="Sad" required>
+                <label for="sad">😞</label>
+                <input type="radio" id="neutral" name="rating" value="Neutral">
+                <label for="neutral">😐</label>
+                <input type="radio" id="happy" name="rating" value="Happy">
+                <label for="happy">😊</label>
+                <input type="radio" id="very-happy" name="rating" value="Very Happy">
+                <label for="very-happy">😁</label>
+                <input type="radio" id="ecstatic" name="rating" value="Ecstatic">
+                <label for="ecstatic">😍</label>
+            </div>
+
+            <label for="msg">
+                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>
+                Write your Suggestions:
+            </label>
+            <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slideshow-container img');
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
+</body>
+</html>
